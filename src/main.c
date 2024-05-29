@@ -4,8 +4,8 @@
  * Programming 2 - Project 3 (PageRank)
  */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "standard_headers.h"
+
 #include "argparser.h"
 #include "utils.h"
 #include "implementFlags.h"

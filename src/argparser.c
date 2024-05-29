@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <getopt.h>
+#include "standard_headers.h"
 #include "argparser.h"
 
 

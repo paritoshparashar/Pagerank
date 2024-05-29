@@ -1,4 +1,5 @@
-#include <stdio.h>
+#include "standard_headers.h"
+
 #include "statistics.h"
 
 void calculate_nodes (char * input_file , int* num_nodes){
@@ -14,7 +15,7 @@ void calculate_nodes (char * input_file , int* num_nodes){
 
         fscanf (file , "%*[^\n]\n"); // Reads the first line without saving it
 
-        
+
 }
 
 int calculate_edges (){

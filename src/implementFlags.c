@@ -1,5 +1,6 @@
+#include "standard_headers.h"
+
 #include "argparser.h"
-#include <stdio.h>
 #include "implementFlags.h"
 #include "statistics.h"
   
@@ -51,7 +52,7 @@
             int num_nodes = 0;
             calculate_nodes (optional_filename , &num_nodes);
 
-            
+
 
         printf ("%s:\n"
                 "- num nodes: %d" ,  graph_name, num_nodes );

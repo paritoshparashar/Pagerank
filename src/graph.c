@@ -1,8 +1,8 @@
+#include "standard_headers.h"
 
-
-// struct graph_nodes
-// {
-//     char* name [40];
-//     int outLinks;
-//     int inLinks;
-// };
+typedef struct graph_nodes
+{
+    char* name [40];
+    struct graph_nodes* * outLinks;
+    struct graph_nodes* * inLinks;
+}  graph_nodes;
