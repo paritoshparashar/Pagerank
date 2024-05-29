@@ -13,4 +13,7 @@
             "\t-s      Compute and print the statistics of the graph as defined in section 3.4\n"
             "\t-p P    Set the parameter p to P%%. (Default: P = 10)\n");
   }
-  
+
+  void print_graph_statistics (){
+    printf ("Hello is read the -s flag\n");
+  }

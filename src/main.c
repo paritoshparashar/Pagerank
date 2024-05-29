@@ -24,8 +24,11 @@ int main(int argc, char *const *argv) {
   {
     print_help_page();
   }
+  if (s_flag == 1)
+  {
+    print_graph_statistics();
+  }
   
-  printf ("FILENAME: %s\n", optional_filename);
 
   exit(0);
 }
