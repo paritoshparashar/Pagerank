@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <getopt.h>
+#include "argparser.h"
 
-
-void parse_cmd_line_parameters (int argc , char *const *argv) {
 
     const char *options = "hr:m:sp:";
 
@@ -16,6 +15,9 @@ void parse_cmd_line_parameters (int argc , char *const *argv) {
     int s_flag = 0;
     char* p_flag = NULL;
 
+void parse_cmd_line_parameters (int argc , char *const *argv) {
+
+    
     while ((read_option = getopt (argc , argv , options)) != -1) {
 
         // Handle error, when one option is present in the command line twice -s -s (this will revert s in the current implementation to 0 again) we can handle this by an if (s_flag != 1) {} 
