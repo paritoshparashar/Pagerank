@@ -54,7 +54,15 @@ void parse_cmd_line_parameters (int argc , char *const *argv) {
         }
     }
 
+    // What happen if many tags are present along with h and filename??
 
+
+     // If -h is present, the filename won't be, so don't do anything and return
+    if (h_flag == 1)
+    {
+        return;
+    }
+    
     if (h_flag == 0){
 
         // We expect a [FILENAME]

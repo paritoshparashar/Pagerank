@@ -23,6 +23,7 @@ int main(int argc, char *const *argv) {
   if (h_flag == 1)
   {
     print_help_page();
+    return 0;
   }
   if (s_flag == 1)
   {
