@@ -68,10 +68,7 @@ void parse_cmd_line_parameters (int argc , char *const *argv) {
         }
 
     }
-    
-
-    
+ 
     return ;
-
     
 }
