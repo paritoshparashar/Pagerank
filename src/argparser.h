@@ -1,6 +1,8 @@
 #ifndef ARGPARSER_H
 #define ARGPARSER_H
 
+#include "standard_headers.h"
+
 void parse_cmd_line_parameters (int argc , char *const *argv);
 
 // extern int read_option; // Tracks the options read by getopt

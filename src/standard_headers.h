@@ -5,7 +5,11 @@
 #include <stdlib.h>
 #include <string.h>
 #include <getopt.h>
+
 // Include other standard headers as needed
 #include "graph.h"
+#include "readInputFile.h"
+#include "argparser.h"
+#include "implementFlags.h"
 
 #endif /* STANDARD_HEADERS_H */

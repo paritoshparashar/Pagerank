@@ -11,9 +11,9 @@ typedef struct edge
 // Strutcture of a graph node
 typedef struct graph_node
 {
-    char name [40];
-    edge outEdge;
-    edge inEdge;
+    char * name;
+    edge * outEdge;
+    edge * inEdge;
 
 }  graph_node;
 
@@ -21,16 +21,25 @@ typedef struct graph_node
 // Structure of a graph
 typedef struct graph 
 {
-    char name [40];
+    char* name;
     graph_node * * node;
     int node_count;
+
 }  graph;
+
+
+/*
+Takes -> graph name, and
+Returns -> pointer to the newly created graph, & sets the default values
+*/
+graph* createGraph ( char * name );
+
 
 /*
 Takes -> node name, and
-Returns -> pointer to the newly created node
+Returns -> pointer to the newly created node, & sets the deafult values
 */
-graph_node * createNode (const char * name);
+graph_node * createNode (char * name);
 
 /*
 Takes -> pointer to a graph, a graph node, and
@@ -45,3 +54,4 @@ Returns -> 1 if node with nodeName exits in gr, else 0
 int node_exists ( graph* gr , char * nodeName);
 
 #endif
+

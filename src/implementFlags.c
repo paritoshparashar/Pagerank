@@ -1,5 +1,4 @@
 #include "standard_headers.h"
-
 #include "argparser.h"
 #include "implementFlags.h"
 #include "statistics.h"
@@ -26,6 +25,12 @@
         
         // Create a graph from a filename string and print name
         graph * gr = readFile_createStructure (optional_filename);
+
+        if (gr == NULL)
+        {
+            return;
+        }
+        
         printf ("%s:\n" ,  gr->name );
 
 
@@ -33,26 +38,26 @@
 
 
             // Calculate number of nodes
-            int num_nodes = 0;
-            calculate_nodes ( gr , &num_nodes);
-            printf ("- num nodes: %d\n" ,  num_nodes );
+            // int num_nodes = 0;
+            // calculate_nodes ( gr , &num_nodes);
+            // printf ("- num nodes: %d\n" ,  num_nodes );
 
-            // Calculate number of nodes
-            int num_edges = 0;
-            calculate_edges (gr , &num_edges);
-            printf ("- num edges: %d\n" ,  num_edges );
-
-
-            // Calculate number of nodes
-            int indegree [2]  = {0,1};
-            calculate_indegree ( gr , indegree);
-            printf ("- indegree: %d-%d\n" ,  indegree[0] , indegree[1] );
+            // // Calculate number of nodes
+            // int num_edges = 0;
+            // calculate_edges (gr , &num_edges);
+            // printf ("- num edges: %d\n" ,  num_edges );
 
 
-            // Calculate number of nodes
-            int outdegree [2] = {0,1};
-            calculate_outdegree(gr , outdegree);
-            printf ("- outdegree: %d-%d\n" ,  outdegree[0] , outdegree[1] );
+            // // Calculate number of nodes
+            // int indegree [2]  = {0,1};
+            // calculate_indegree ( gr , indegree);
+            // printf ("- indegree: %d-%d\n" ,  indegree[0] , indegree[1] );
+
+
+            // // Calculate number of nodes
+            // int outdegree [2] = {0,1};
+            // calculate_outdegree(gr , outdegree);
+            // printf ("- outdegree: %d-%d\n" ,  outdegree[0] , outdegree[1] );
         
         
         // Destroy the graph and all its nodes maybe using the node count 
