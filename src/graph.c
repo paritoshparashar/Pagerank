@@ -24,7 +24,7 @@ typedef struct graph
 {
     char name [40];
     graph_node * * node;
-
+    int node_count;
 }  graph;
 
 
@@ -58,8 +58,33 @@ graph_node * createNode (const char * name) {
     return newNode;
 }
 
-// void addNode_toGraph ( graph* gr , graph_node * newNode ) {
 
+void addNode_toGraph ( graph* gr , graph_node * newNode ) {
 
-// }
+    // Assign a new container to the node pointer array of a graph
+    gr->node = realloc (gr->node , (gr->node_count +1) * (sizeof (graph_node *)) );
 
+    if ((gr->node) == NULL)
+    {
+        return ;
+    }
+
+    //Assign the new node at[nodecount] (intially count = 0) 
+    gr->node[gr->node_count] = newNode;
+    ++gr->node_count;
+    
+}
+
+int node_exists ( graph* gr , char * nodeName) {
+
+    for (int i = 0; i < gr->node_count; i++)
+    {
+        if (strcmp (gr->node[i]->name , nodeName) == 0) // if node names are same i.e.(=0)
+        {
+            return 1; // true (node exists)
+        }
+        
+    }
+    return 0; // False (no such node exists)
+    
+}

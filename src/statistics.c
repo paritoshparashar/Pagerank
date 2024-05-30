@@ -15,6 +15,18 @@ void calculate_nodes (char * input_file , int* num_nodes){
 
         fscanf (file , "%*[^\n]\n"); // Reads the first line without saving it
 
+        char nodeA [40];
+        char nodeB [40];
+
+        while ( fscanf (file , "%39s -> %39s;", nodeA, nodeB ) != EOF)
+        {
+            if (1)
+            {
+                /* code */ // Check if any node with nodeA string name exists, if yes, move on, else create node and add node
+            }
+            
+        }
+        
 
 }
 
