@@ -55,7 +55,7 @@
 
 
         printf ("%s:\n"
-                "- num nodes: %d" ,  graph_name, num_nodes );
+                "- num nodes: %d\n" ,  graph_name, num_nodes );
 
   }
 
