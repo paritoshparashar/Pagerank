@@ -1,32 +1,6 @@
 #include "standard_headers.h"
-
+#include "graph.h"
 // Structure of a link of a node (outLinks / inLinks) 
-
-typedef struct edge
-{
-    int length;
-    struct graph_node * * connection;
-
-} edge;
-
-// Strutcture of a graph node
-typedef struct graph_node
-{
-    char name [40];
-    edge outEdge;
-    edge inEdge;
-
-}  graph_node;
-
-
-// Structure of a graph
-typedef struct graph 
-{
-    char name [40];
-    graph_node * * node;
-    int node_count;
-}  graph;
-
 
 
 graph_node * createNode (const char * name) {

@@ -1,5 +1,4 @@
 #include "standard_headers.h"
-
 #include "statistics.h"
 
 void calculate_nodes (char * input_file , int* num_nodes){
@@ -20,7 +19,8 @@ void calculate_nodes (char * input_file , int* num_nodes){
 
         while ( fscanf (file , "%39s -> %39[^;];", nodeA, nodeB ) == 2)
         {
-            /*Need to handle error in the input file
+            /*
+            Need to handle error in the input file
             Works for correct input now!
             */ 
             if (1)

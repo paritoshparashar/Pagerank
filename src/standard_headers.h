@@ -6,5 +6,6 @@
 #include <string.h>
 #include <getopt.h>
 // Include other standard headers as needed
+#include "graph.h"
 
 #endif /* STANDARD_HEADERS_H */
