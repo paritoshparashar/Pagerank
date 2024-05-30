@@ -23,39 +23,40 @@
             return;
         }
         
-        FILE* input_file = fopen (optional_filename , "r");
         
-        // Error: File did not open
-        if (input_file == NULL)
-        {
-            fclose (input_file);
-            return;
-        }
-        
-        // Read the graph name for printing
-
-        char graph_name[40]; // Contains the graph name
-
-        if (fscanf (input_file , "digraph %39s {" , graph_name) != 1)
-        {
-            fclose (input_file);
-            return;                                 // Error: reading the file
-        }
-
-        fclose (input_file);
+        // Create a graph from a filename string and print name
+        graph * gr = readFile_createStructure (optional_filename);
+        printf ("%s:\n" ,  gr->name );
 
 
         // Calculate different properties of graph
 
 
-            // Call calculate_nodes to get the number of nodes in num_nodes
+            // Calculate number of nodes
             int num_nodes = 0;
-            calculate_nodes (optional_filename , &num_nodes);
+            calculate_nodes ( gr , &num_nodes);
+            printf ("- num nodes: %d\n" ,  num_nodes );
+
+            // Calculate number of nodes
+            int num_edges = 0;
+            calculate_edges (gr , &num_edges);
+            printf ("- num edges: %d\n" ,  num_edges );
 
 
+            // Calculate number of nodes
+            int indegree [2]  = {0,1};
+            calculate_indegree ( gr , indegree);
+            printf ("- indegree: %d-%d\n" ,  indegree[0] , indegree[1] );
 
-        printf ("%s:\n"
-                "- num nodes: %d\n" ,  graph_name, num_nodes );
 
+            // Calculate number of nodes
+            int outdegree [2] = {0,1};
+            calculate_outdegree(gr , outdegree);
+            printf ("- outdegree: %d-%d\n" ,  outdegree[0] , outdegree[1] );
+        
+        
+        // Destroy the graph and all its nodes maybe using the node count 
+
+        
   }
 
