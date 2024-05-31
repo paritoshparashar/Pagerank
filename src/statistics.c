@@ -5,10 +5,7 @@
 
 void calculate_nodes ( graph * gr, int* num_nodes){
 
-    
-        
-        
-
+        *num_nodes = gr->node_count;
 }
 
 void calculate_edges (graph * gr, int* num_edges){

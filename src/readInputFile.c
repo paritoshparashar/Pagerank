@@ -49,18 +49,31 @@ graph* readFile_createStructure ( char * input_filename ) {
             if it doesn't, create node && add node, 
             else move on
             */ 
+            graph_node * newNodeA;
+            graph_node * newNodeB;
 
             if (node_exists (gr , strA) == 0) // If node deosn't exist
             {
-                addNode_toGraph (gr , createNode (strA) );
+                newNodeA = createNode (strA);
+                addNode_toGraph (gr , newNodeA );
             }
             
             if (node_exists (gr , strB) == 0) // If node deosn't exist
             { 
-                addNode_toGraph (gr , createNode (strB) );
+                newNodeB = createNode (strB);
+                addNode_toGraph (gr, newNodeB );
             }
+
+            
+            
             
         }
+
+        // for (int i = 0; i < gr->node_count; i++)
+        // {
+        //     printf ("%s, ", gr->node[i]->name);
+        // }
+        
         
 
 
