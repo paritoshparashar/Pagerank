@@ -43,9 +43,9 @@
             printf ("- num nodes: %d\n" ,  num_nodes );
 
             // // Calculate number of nodes
-            // int num_edges = 0;
-            // calculate_edges (gr , &num_edges);
-            // printf ("- num edges: %d\n" ,  num_edges );
+            int num_edges = 0;
+            calculate_edges (gr , &num_edges);
+            printf ("- num edges: %d\n" ,  num_edges );
 
 
             // // Calculate number of nodes

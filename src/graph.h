@@ -28,6 +28,11 @@ typedef struct graph
 }  graph;
 
 
+void addNode_toEdge ( edge * ed , graph_node * node );
+
+edge* createEdge ();
+
+
 /*
 Takes -> graph name, and
 Returns -> pointer to the newly created graph, & sets the default values
@@ -52,6 +57,8 @@ Takes -> pointer to a graph, a name string
 Returns -> 1 if node with nodeName exits in gr, else 0
 */
 int node_exists ( graph* gr , char * nodeName);
+
+graph_node * findNode (graph * gr , char * strName);
 
 #endif
 

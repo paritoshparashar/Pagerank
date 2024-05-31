@@ -1,7 +1,45 @@
 #include "standard_headers.h"
 #include "graph.h"
-// Structure of a link of a node (outLinks / inLinks) 
 
+
+// Helper methods for edges below
+
+edge* createEdge () {
+
+                                                                // MALLOC *******
+    edge* ed = (edge* ) malloc (sizeof (edge));
+
+    // If malloc fails to assign mem
+    if (ed == NULL)
+    {
+        return NULL;
+    }
+
+    // Set the default values of a node
+    ed->length = 0;
+    ed->connection = NULL;
+
+    return ed;
+
+}
+
+void addNode_toEdge ( edge * ed , graph_node * node ) {
+
+    // Assign a new container to the [node pointer] array of a graph
+
+                                                                // MALLOC *******
+    ed->connection = realloc (ed->connection , (ed->length +1) * (sizeof (graph_node *)) );
+
+    if ((ed->connection) == NULL)
+    {
+        return ;
+    }
+
+    //Assign the new node at [edLength] (intially length = 0) 
+    ed->connection[ed->length] = node;
+    ed->length = (ed->length) + 1;
+    
+}
 
 
 // Helper methods for graph below
@@ -69,7 +107,7 @@ graph_node * createNode ( char * name) {
 void addNode_toGraph ( graph* gr , graph_node * newNode ) {
 
     // Assign a new container to the [node pointer] array of a graph
-    
+
                                                                 // MALLOC *******
     gr->node = realloc (gr->node , (gr->node_count +1) * (sizeof (graph_node *)) );
 
@@ -103,5 +141,21 @@ int node_exists ( graph* gr , char * nodeName) {
     }
 
     return 0; // false (no such node exists)
+    
+}
+
+graph_node * findNode (graph * gr , char * strName) {
+
+    for (int i = 0; i < gr->node_count; i++)
+    {
+        if (strcmp (gr->node[i]->name , strName) == 0)
+        {
+            return gr->node[i];
+        }
+        
+    }
+
+    // Did not find node
+    return NULL; 
     
 }

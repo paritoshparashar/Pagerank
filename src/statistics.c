@@ -10,7 +10,14 @@ void calculate_nodes ( graph * gr, int* num_nodes){
 
 void calculate_edges (graph * gr, int* num_edges){
 
+    int totalEdges = 0;
+
+    for (int i = 0; i < gr->node_count; i++)
+    {
+        totalEdges += gr->node[i]->outEdge->length;
+    }
     
+    *num_edges = totalEdges;
 }
 
 
