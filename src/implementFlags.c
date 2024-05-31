@@ -55,9 +55,9 @@
 
 
             // // Calculate number of nodes
-            // int outdegree [2] = {0,1};
-            // calculate_outdegree(gr , outdegree);
-            // printf ("- outdegree: %d-%d\n" ,  outdegree[0] , outdegree[1] );
+            int outdegree [2] = {0,1};
+            calculate_outdegree(gr , outdegree);
+            printf ("- outdegree: %d-%d\n" ,  outdegree[0] , outdegree[1] );
         
         
         // Destroy the graph and all its nodes maybe using the node count 

@@ -52,6 +52,30 @@ void calculate_indegree (graph * gr, int* inMinMax){
 
 //Returns an int array [min,max] of outdegree of graph
 void calculate_outdegree (graph * gr, int* outMinMax){
+
+    int min = gr->node[0]->outEdge->length;
+    int max = gr->node[0]->outEdge->length;
+
+    for (int i = 0; i < gr->node_count; i++)
+    {
+
+        // Calculate min indegree
+        if (gr->node[i]->outEdge->length < min)
+        {
+            min = gr->node[i]->outEdge->length;
+        }
+
+        // Calculate max indegree
+        if (gr->node[i]->outEdge->length > max)
+        {
+            max = gr->node[i]->outEdge->length;
+        }
+         
+    }
+    
+    outMinMax[0] = min;
+    outMinMax[1] = max;
+    
     return ;
 }
 
