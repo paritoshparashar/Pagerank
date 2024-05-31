@@ -124,21 +124,7 @@ graph* readFile_createStructure ( char * input_filename ) {
             
         }
 
-        // for (int i = 0; i < gr->node_count; i++)
-        // {
-        //     printf ("%s, ", gr->node[i]->name);
-        // }
-        
-        
-
-
-    char end = '}';
-        
-    if (EOF != fscanf (file , "%s" , &end))
-    {
-        // Error in reading the whole file
-        exit (1);
-    }
+    
 
     return gr;
 }

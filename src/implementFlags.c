@@ -49,18 +49,18 @@
 
 
             // // Calculate indegree
-            int indegree [2]  = {0,1};
+            int indegree [2]  = {0,0};
             calculate_indegree ( gr , indegree);
             printf ("- indegree: %d-%d\n" ,  indegree[0] , indegree[1] );
 
 
             // // Calculate number of nodes
-            int outdegree [2] = {0,1};
+            int outdegree [2] = {0,0};
             calculate_outdegree(gr , outdegree);
             printf ("- outdegree: %d-%d\n" ,  outdegree[0] , outdegree[1] );
         
         
-        // Destroy the graph and all its nodes maybe using the node count 
+        // Destroy the graph and all its nodes maybe using the node count Now do this
 
         
   }

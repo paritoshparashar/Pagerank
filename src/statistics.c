@@ -24,6 +24,11 @@ void calculate_edges (graph * gr, int* num_edges){
 // Returns an int array [min, max] of indegree of graph
 void calculate_indegree (graph * gr, int* inMinMax){
 
+    if (gr->node_count == 0)
+    {
+        return;
+    }
+    
     int min = gr->node[0]->inEdge->length;
     int max = gr->node[0]->inEdge->length;
 
@@ -52,6 +57,11 @@ void calculate_indegree (graph * gr, int* inMinMax){
 
 //Returns an int array [min,max] of outdegree of graph
 void calculate_outdegree (graph * gr, int* outMinMax){
+
+    if (gr->node_count == 0)
+    {
+        return;
+    }
 
     int min = gr->node[0]->outEdge->length;
     int max = gr->node[0]->outEdge->length;
