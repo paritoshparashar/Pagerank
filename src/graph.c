@@ -2,7 +2,8 @@
 #include "graph.h"
 
 
-// Helper methods for edges below
+
+//____________________Helper methods for edges below____________________//
 
 edge* createEdge () {
 
@@ -41,39 +42,19 @@ void addNode_toEdge ( edge * ed , graph_node * node ) {
     
 }
 
+void destroyEdge ( edge * ed) {
 
-// Helper methods for graph below
-
-graph* createGraph ( char * name ) {
-
-    if (name == NULL)
-    {
-        return NULL;
-    }
-
-                                                                // MALLOC *******
-    graph* gr = (graph* ) malloc (sizeof (graph));
-
-    // If malloc fails to assign mem
-    if (gr == NULL)
-    {
-        return NULL;
-    }
-
-    // Set the default values of a node
-
-                                                                // MALLOC *******
-    gr->name = (char*)malloc (40* sizeof (char));
-    strcpy (gr->name , name);
-
-    gr->node = NULL;
-    gr->node_count = 0;
-
-    return gr;
-
+    /*
+    First free the edge connection array,
+    then the edge struct itself
+    */ 
+    free((*ed).connection); 
+    ed->connection = NULL; // Handling dangling pointer maybe!?
+    free (ed);
 }
 
-// Helper methods for node below
+
+//____________________Helper methods for node below____________________//
 
 graph_node * createNode ( char * name) {
 
@@ -158,4 +139,56 @@ graph_node * findNode (graph * gr , char * strName) {
     // Did not find node
     return NULL; 
     
+}
+
+void destroyNode ( graph_node * node){
+
+    free(node->name); // I malloced the name too for some reason
+    node->name = NULL;
+
+    node->outEdge = NULL;
+    node->inEdge = NULL;
+
+    free (node);
+}
+
+
+//____________________Helper methods for graph below____________________//
+
+
+graph* createGraph ( char * name ) {
+
+    if (name == NULL)
+    {
+        return NULL;
+    }
+
+                                                                // MALLOC *******
+    graph* gr = (graph* ) malloc (sizeof (graph));
+
+    // If malloc fails to assign mem
+    if (gr == NULL)
+    {
+        return NULL;
+    }
+
+    // Set the default values of a node
+
+                                                                // MALLOC *******
+    gr->name = (char*)malloc (40* sizeof (char));
+    strcpy (gr->name , name);
+
+    gr->node = NULL;
+    gr->node_count = 0;
+
+    return gr;
+
+}
+
+void destroyGraph ( graph * gr) {
+
+    free (gr->name);
+    free (gr->node);
+    free (gr);
+
 }

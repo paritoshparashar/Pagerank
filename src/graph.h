@@ -27,12 +27,6 @@ typedef struct graph
 
 }  graph;
 
-/*
-Takes -> pointer to an edge struct, a node
-Returns -> void, side effect* add the node to the edge struct connection 
-*/
-void addNode_toEdge ( edge * ed , graph_node * node );
-
 
 /*
 Takes -> nothinh
@@ -42,10 +36,20 @@ edge* createEdge ();
 
 
 /*
-Takes -> graph name, and
-Returns -> pointer to the newly created graph with default values
+Takes -> pointer to an edge struct, a node
+Returns -> void, side effect* add the node to the edge struct connection 
 */
-graph* createGraph ( char * name );
+void addNode_toEdge ( edge * ed , graph_node * node );
+
+
+/*
+Takes -> pointer to an edge struct
+Returns -> void, side effect* frees all the memory used by an edge struct
+*/
+void destroyEdge ( edge * ed);
+
+
+//____________________Helper methods for node below____________________//
 
 
 /*
@@ -75,5 +79,28 @@ Returns -> node with the same name as input string,
 */
 graph_node * findNode (graph * gr , char * strName);
 
-#endif
 
+/*
+Takes -> pointer to a node
+Returns -> void, side effect* frees all the memory used by an node struct 
+*/
+void destroyNode ( graph_node * node);
+
+
+//____________________Helper methods for graph below____________________//
+
+
+/*
+Takes -> graph name
+Returns -> pointer to the newly created graph with default values
+*/
+graph* createGraph ( char * name);
+
+
+/*
+Takes -> pointer to a graph
+Returns -> void, side effect* frees all the memory used by an graph struct 
+*/
+void destroyGraph ( graph * gr);
+
+#endif

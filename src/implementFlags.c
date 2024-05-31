@@ -28,6 +28,7 @@
 
         if (gr == NULL)
         {
+            //exit(1);
             return;
         }
         
@@ -60,8 +61,22 @@
             printf ("- outdegree: %d-%d\n" ,  outdegree[0] , outdegree[1] );
         
         
-        // Destroy the graph and all its nodes maybe using the node count Now do this
+        // Destroy the graph and all its nodes maybe using the node count
 
+            for (int i = 0; i < gr->node_count; i++)
+            {
+                // 1 destroy both edge for node[i]
+                destroyEdge  (gr->node[i]->inEdge);
+                destroyEdge  (gr->node[i]->outEdge);
+
+                // 2 destroy node[i]
+                destroyNode  (gr->node[i]);
+
+            }
+
+            destroyGraph (gr);
+        
+    return;
         
   }
 
