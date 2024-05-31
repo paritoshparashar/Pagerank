@@ -42,16 +42,16 @@
             calculate_nodes ( gr , &num_nodes);
             printf ("- num nodes: %d\n" ,  num_nodes );
 
-            // // Calculate number of nodes
+            // // Calculate number of edges
             int num_edges = 0;
             calculate_edges (gr , &num_edges);
             printf ("- num edges: %d\n" ,  num_edges );
 
 
-            // // Calculate number of nodes
-            // int indegree [2]  = {0,1};
-            // calculate_indegree ( gr , indegree);
-            // printf ("- indegree: %d-%d\n" ,  indegree[0] , indegree[1] );
+            // // Calculate indegree
+            int indegree [2]  = {0,1};
+            calculate_indegree ( gr , indegree);
+            printf ("- indegree: %d-%d\n" ,  indegree[0] , indegree[1] );
 
 
             // // Calculate number of nodes
