@@ -95,7 +95,7 @@
         {
             printf ("%-15s", gr->node[i]->name); // Website name
 
-            printf ("%.10f\n", web_rand_pageranks[i]); // Website rank
+            printf ("%lf\n", web_rand_pageranks[i]); // Website rank
         }
         
 
