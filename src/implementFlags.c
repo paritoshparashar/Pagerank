@@ -73,7 +73,7 @@
 
     graph * gr = readFile_createStructure (optional_filename);
 
-        if (gr == NULL)
+        if (gr == NULL || gr->node_count == 0)
         {
             //exit(1);
             return;
