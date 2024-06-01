@@ -34,12 +34,6 @@ int main(int argc, char *const *argv) {
     print_graph_statistics();
   }
 
-  // if (p_flag == 1)
-  // {
-  //   printf ("P - %d\n" , p_val);  /*Doesn't matter if p is true or not*/
-  // }
-  
-
   if (r_flag == 1)
   {
     print_randomSurfer_pagerank ();
@@ -48,6 +42,6 @@ int main(int argc, char *const *argv) {
   
 
   
-
+return 0;
   // exit(0);
 }

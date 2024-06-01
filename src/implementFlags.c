@@ -81,6 +81,7 @@
 
         if (gr->node_count == 0)
         {
+            recursive_graph_destroy (gr);
             return;
         }
 
@@ -94,7 +95,7 @@
         {
             printf ("%-15s", gr->node[i]->name); // Website name
 
-            printf ("%lf\n", web_rand_pageranks[i]); // Website rank
+            printf ("%.10f\n", web_rand_pageranks[i]); // Website rank
         }
         
 
