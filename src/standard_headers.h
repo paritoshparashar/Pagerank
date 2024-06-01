@@ -13,5 +13,6 @@
 #include "implementFlags.h"
 #include "utils.h"
 #include "randomSurfer.h"
+#include "markovChains.h"
 
 #endif /* STANDARD_HEADERS_H */

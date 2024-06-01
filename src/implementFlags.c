@@ -71,20 +71,13 @@
 
   void print_randomSurfer_pagerank () {
 
-    graph * gr = readFile_createStructure (optional_filename);
+    graph * gr = safelycreateGraph ();
 
-        if (gr == NULL)
-        {
-            //exit(1);
-            return;
-        }
-
-        if (gr->node_count == 0)
-        {
-            recursive_graph_destroy (gr);
-            return;
-        }
-
+    if (gr == NULL)
+    {
+        return;
+    }
+    
         // START SURFING WITH A RANDOM WEBSITE
         int start_website = randu (gr->node_count);
         double * web_rand_pageranks = startSurfing (gr , start_website );
@@ -99,14 +92,92 @@
         }
         
 
-        // Free web_rand_pageranks recursively
-        free (web_rand_pageranks);
-        // Recursively destroy the graph
-        recursive_graph_destroy (gr);
+    // Free memory recursively
+    free (web_rand_pageranks);
+    recursive_graph_destroy (gr);
 
-    return;
+return;
         
-  }
+}
+
+
+void print_markovChains_pagerank () {
+
+    graph * gr = safelycreateGraph ();
+
+    if (gr == NULL)
+    {
+        return;
+    }
+
+    // Create probability matrix
+    double * matrix = calculate_probability_matrix (gr);
+
+        // Probabitlity vector
+        double* current_probArr = malloc (gr->node_count * sizeof (double));
+        double* nextState_probArr = NULL;
+        double* temp_probArr = NULL;
+
+        // Initialize the probability vector
+        for (int i = 0; i < gr->node_count; i++)
+        {
+            current_probArr[i] = (double) 1/gr->node_count;
+        }
+        
+        for (int i = 0; i < m_flag; i++)
+        {
+            nextState_probArr = calculate_markovChains (gr, current_probArr, matrix);
+            temp_probArr = current_probArr;
+            current_probArr = nextState_probArr;
+            free (temp_probArr);
+        }
+        
+    
+        // Print loop after calculating pagerank
+
+        for (int i = 0; i < gr->node_count; i++)
+        {
+            printf ("%-15s", gr->node[i]->name); // Website name
+
+            printf ("%.10f\n", current_probArr[i]); // Website rank
+        }
+        
+
+    // Free memory recursively
+    temp_probArr = NULL;
+    nextState_probArr = NULL;
+    
+    free (current_probArr);
+    current_probArr = NULL;
+
+    free (matrix);
+    recursive_graph_destroy (gr);
+
+return;
+    
+}
+
+// ________________________ Graph Methods ________________________ //
+
+graph* safelycreateGraph () {
+
+    graph * gr = readFile_createStructure (optional_filename);
+
+        if (gr == NULL)
+        {
+            //exit(1);
+            return NULL;
+        }
+
+        if (gr->node_count == 0)
+        {
+            recursive_graph_destroy (gr);
+            return NULL;
+        }
+
+    return gr;
+
+}
 
 
 void recursive_graph_destroy (graph * gr) {

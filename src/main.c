@@ -39,6 +39,11 @@ int main(int argc, char *const *argv) {
     print_randomSurfer_pagerank ();
   }
   
+  if (m_flag == 1)
+  {
+    print_markovChains_pagerank ();
+  }
+  
   
 
   

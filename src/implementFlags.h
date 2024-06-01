@@ -26,8 +26,23 @@ Implements the -r flag function
 and writes to the standard output,
 the pageranks for every node of graph
 represented by an input file (passed in cmd line)
+using the random surfer method
 */
 void print_randomSurfer_pagerank ();
+
+
+/*
+Implements the -m flag function
+and writes to the standard output,
+the pageranks for every node of graph
+represented by an input file (passed in cmd line)
+by creating markov chains
+*/
+void print_markovChains_pagerank ();
+
+
+// Graph Methods //
+graph* safelycreateGraph ();
 
 void recursive_graph_destroy (graph * gr);
 
