@@ -124,7 +124,7 @@ void print_markovChains_pagerank () {
             current_probArr[i] = (double) 1/gr->node_count;
         }
         
-        for (int i = 0; i < m_flag; i++)
+        for (int i = 0; i < m_val; i++)
         {
             nextState_probArr = calculate_markovChains (gr, current_probArr, matrix);
             temp_probArr = current_probArr;
@@ -146,7 +146,7 @@ void print_markovChains_pagerank () {
     // Free memory recursively
     temp_probArr = NULL;
     nextState_probArr = NULL;
-    
+
     free (current_probArr);
     current_probArr = NULL;
 
