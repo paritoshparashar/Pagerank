@@ -73,17 +73,21 @@
 
     graph * gr = readFile_createStructure (optional_filename);
 
-        if (gr == NULL || gr->node_count == 0)
+        if (gr == NULL)
         {
             //exit(1);
+            return;
+        }
+
+        if (gr->node_count == 0)
+        {
             return;
         }
 
         // START SURFING WITH A RANDOM WEBSITE
         int start_website = randu (gr->node_count);
         double * web_rand_pageranks = startSurfing (gr , start_website );
-
-
+        
         // Print loop after calculating pagerank
 
         for (int i = 0; i < gr->node_count; i++)
