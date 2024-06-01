@@ -17,7 +17,7 @@
   void print_graph_statistics (){
 
         //Error handling: if -h is absent and filename is also absent
-        if (optional_filename == NULL || optional_filename[0] == '\0')
+        if (optional_filename == NULL || optional_filename[0] == '\0') // Is this a redundant check? i am checking this in main too
         {
             return;
         }
@@ -61,7 +61,52 @@
             printf ("- outdegree: %d-%d\n" ,  outdegree[0] , outdegree[1] );
         
         
-        // Destroy the graph and all its nodes maybe using the node count
+        // Recursively destroy the graph
+        recursive_graph_destroy (gr);
+            
+        
+    return;
+        
+  }
+
+  void print_randomSurfer_pagerank () {
+
+    graph * gr = readFile_createStructure (optional_filename);
+
+        if (gr == NULL)
+        {
+            //exit(1);
+            return;
+        }
+
+        // START SURFING WITH A RANDOM WEBSITE
+        int start_website = randu (gr->node_count);
+        double * web_rand_pageranks = startSurfing (gr , start_website );
+
+
+        // Print loop after calculating pagerank
+
+        for (int i = 0; i < gr->node_count; i++)
+        {
+            printf ("%-15s", gr->node[i]->name); // Website name
+
+            printf ("%lf\n", web_rand_pageranks[i]); // Website rank
+        }
+        
+
+        // Free web_rand_pageranks recursively
+        free (web_rand_pageranks);
+        // Recursively destroy the graph
+        recursive_graph_destroy (gr);
+
+    return;
+        
+  }
+
+
+void recursive_graph_destroy (graph * gr) {
+
+            // Destroy the graph and all its nodes maybe using the node count
 
             for (int i = 0; i < gr->node_count; i++)
             {
@@ -75,8 +120,5 @@
             }
 
             destroyGraph (gr);
-        
-    return;
-        
-  }
 
+}

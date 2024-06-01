@@ -190,5 +190,6 @@ void destroyGraph ( graph * gr) {
     free (gr->name);
     free (gr->node);
     free (gr);
+    gr = NULL;
 
 }

@@ -7,11 +7,19 @@
     int read_option; // Tracks the options read by getopt
 
     int h_flag = 0;
+
     char* optional_filename = NULL;
-    char* r_flag = NULL;
-    char* m_flag = NULL;
+
+    int r_flag = 0;
+    int r_val = 0;
+
+    int m_flag = 0;
+    int m_val = 0;
+
+    int p_flag = 0;
+    int p_val = 10;
+
     int s_flag = 0;
-    char* p_flag = NULL;
 
 void parse_cmd_line_parameters (int argc , char *const *argv) {
 
@@ -31,11 +39,13 @@ void parse_cmd_line_parameters (int argc , char *const *argv) {
             break;
         
         case 'r':
-            r_flag = optarg;
+            r_flag = 1;
+            r_val = atoi(optarg);  // Where ever using atoi (3 cases below), beware that optarg could be a non-number or even point to null. Handle this case in the bonus task
             break;
         
         case 'm':
-            m_flag = optarg;
+            m_flag = 1;
+            m_val = atoi(optarg);
             break;
 
         case 's':
@@ -43,7 +53,8 @@ void parse_cmd_line_parameters (int argc , char *const *argv) {
             break;
 
         case 'p':
-            p_flag = optarg;
+            p_flag = 1;
+            p_val = atoi(optarg);
             break;
 
 

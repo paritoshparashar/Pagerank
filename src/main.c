@@ -22,10 +22,31 @@ int main(int argc, char *const *argv) {
     print_help_page();
     return 0;
   }
+  // If h == 0, then filename better not point to NULL
+  else if (optional_filename == NULL)  
+  {
+    return 1;
+  }
+  
+
   if (s_flag == 1)
   {
     print_graph_statistics();
   }
+
+  // if (p_flag == 1)
+  // {
+  //   printf ("P - %d\n" , p_val);  /*Doesn't matter if p is true or not*/
+  // }
+  
+
+  if (r_flag == 1)
+  {
+    print_randomSurfer_pagerank ();
+  }
+  
+  
+
   
 
   // exit(0);

@@ -1,6 +1,7 @@
 #ifndef IMPLEMENTFLAG_H
 #define IMPLEMENTFLAG_H
 
+#include "standard_headers.h"
 
 /*
 Implements the -h flag function
@@ -18,5 +19,16 @@ the statistics for a graph represented
 by an input file (passed in cmd line)
 */
 void print_graph_statistics ();
+
+
+/*
+Implements the -r flag function
+and writes to the standard output,
+the pageranks for every node of graph
+represented by an input file (passed in cmd line)
+*/
+void print_randomSurfer_pagerank ();
+
+void recursive_graph_destroy (graph * gr);
 
 #endif

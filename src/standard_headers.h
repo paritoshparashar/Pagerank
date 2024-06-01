@@ -11,5 +11,7 @@
 #include "readInputFile.h"
 #include "argparser.h"
 #include "implementFlags.h"
+#include "utils.h"
+#include "randomSurfer.h"
 
 #endif /* STANDARD_HEADERS_H */
