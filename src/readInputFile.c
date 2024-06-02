@@ -115,7 +115,7 @@ graph* readFile_createStructure ( char * input_filename ) {
             
         }
 
-    
+    fclose (file);
 
     return gr;
 }
