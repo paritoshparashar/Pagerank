@@ -115,6 +115,13 @@ graph* readFile_createStructure ( char * input_filename ) {
             
         }
 
+        if ( fscanf (file , "}") != 1)
+        {
+            fclose (file);
+            exit (1);
+        }
+        
+
     
 
     return gr;
