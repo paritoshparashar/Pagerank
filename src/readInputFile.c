@@ -1,15 +1,6 @@
 #include "standard_headers.h"
 
-graph* readFile_createStructure ( char * input_filename ) {
-
-
-    //Error handling: if -h is absent and filename is also absent
-
-    if (input_filename == NULL /*|| input_filename[0] == '\0'*/ )  // Check 2nd or condition later
-    {
-        return NULL;
-    }
-    
+graph* readFile_createStructure ( char * input_filename ) {    
 
     FILE* file = fopen (input_filename , "r");
         
@@ -17,7 +8,7 @@ graph* readFile_createStructure ( char * input_filename ) {
         if (file == NULL)
         {
             fclose (file);
-            return NULL ;
+            exit (1);
         }
 
         char graph_name[40];
@@ -25,7 +16,7 @@ graph* readFile_createStructure ( char * input_filename ) {
         if (fscanf (file , "digraph %39s {" , graph_name) != 1)
         {
             fclose (file);
-            return NULL;                                 // Error: reading the file
+            exit (1);                               // Error: reading the file
         }
 
         graph *gr = createGraph (graph_name);

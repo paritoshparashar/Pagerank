@@ -23,9 +23,9 @@ int main(int argc, char *const *argv) {
     return 0;
   }
   // If h == 0, then filename better not point to NULL
-  else if (optional_filename == NULL)  
+  else if (optional_filename == NULL || optional_filename[0] == '\0')  
   {
-    return 1;
+    exit (1);
   }
   
 
