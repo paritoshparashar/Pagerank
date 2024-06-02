@@ -10,4 +10,9 @@ Returns -> pointer to a graph
 */
 graph * readFile_createStructure ( char * input_file );
 
+int is_letter(char c);
+
+int is_digit(char c);
+
+int is_valid_identifier(const char *id);
 #endif
