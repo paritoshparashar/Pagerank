@@ -9,6 +9,6 @@ leaderboard -> dCMS;
 leaderboard -> dGit;
 leaderboard -> dGit;
 guide -> forum;
-forum -> guide
+forum -> guide;
 forum -> dCMS;
 }
