@@ -114,6 +114,13 @@ graph* readFile_createStructure ( char * input_filename ) {
         
             
         }
+        if (strcmp (strA , "}") != 0)
+        {
+            fclose (file);
+            recursive_graph_destroy (gr);
+            exit (1);
+        }
+        
 
     fclose (file);
 

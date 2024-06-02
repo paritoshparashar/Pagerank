@@ -158,7 +158,7 @@ graph* safelycreateGraph () {
 
         if (gr == NULL)
         {
-            //exit(1);
+            exit (1);
             return NULL;
         }
 
