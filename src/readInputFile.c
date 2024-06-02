@@ -113,10 +113,11 @@ graph* readFile_createStructure ( char * input_filename ) {
             }
         
             
-        }
+        }        
 
-        if ( fscanf (file , "}") != 1)
+        if ( strcmp (strA , "}") != 0) 
         {
+            destroyGraph (gr);
             fclose (file);
             exit (1);
         }

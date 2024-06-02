@@ -1,7 +1,7 @@
 digraph Prog2Graph {
 CMS -> dCMS;
 dCMS -> dGit;
-dCMS -> dGit ;
+dCMS -> dGit;
 dCMS -> guide;
 dCMS -> forum;
 dCMS -> leaderboard;
@@ -9,6 +9,6 @@ leaderboard -> dCMS;
 leaderboard -> dGit;
 leaderboard -> dGit;
 guide -> forum;
-forum -> guide;
+forum -> guide
 forum -> dCMS;
 }
