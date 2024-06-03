@@ -43,7 +43,8 @@ int main(int argc, char *const *argv) {
 
   if (r_flag == 1)
   {
-    print_randomSurfer_pagerank ();
+    //print_randomSurfer_pagerank ();
+    printf ("Hello");
   }
   
   if (m_flag == 1)
