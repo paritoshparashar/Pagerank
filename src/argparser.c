@@ -60,7 +60,6 @@ void parse_cmd_line_parameters (int argc , char *const *argv) {
 
         default:
             break; // Will land here in case of an error (some other argument, other than the *options) use exit()
-            printf("wrong cmd line args\n");
             exit (1);
         }
     }
