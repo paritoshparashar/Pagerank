@@ -33,7 +33,7 @@ graph* readFile_createStructure ( char * input_filename ) {
         Works for correct input now!
         */ 
 
-        while ( fscanf (file , "%255s -> %*[ ]%255[^;];", strA, strB ) == 2)
+        while ( fscanf (file , "%255s -> %255[^;];", strA, strB ) == 2)
         {
 
             if (!is_valid_identifier(strA) || !is_valid_identifier(strB)) {
