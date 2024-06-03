@@ -35,10 +35,6 @@ graph* readFile_createStructure ( char * input_filename ) {
 
         while ( fscanf (file , "%255s -> %255[^;];", strA, strB ) == 2)
         {
-
-            // if (!is_valid_identifier(strA) || !is_valid_identifier(strB)) {
-            //     break;
-            // }
             /*
             Check if any node with strA/B name exists, 
             if it doesn't, create node && add node, 
