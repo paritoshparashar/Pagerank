@@ -11,9 +11,9 @@ graph* readFile_createStructure ( char * input_filename ) {
             exit (1);
         }
 
-        char graph_name[256];
+        char graph_name[40];
 
-        if (fscanf (file , "digraph %255s {" , graph_name) != 1)
+        if (fscanf (file , "digraph %39s {" , graph_name) != 1)
         {
             fclose (file);
             exit (1);                               // Error: reading the file
@@ -25,15 +25,15 @@ graph* readFile_createStructure ( char * input_filename ) {
         //________________Create the structure below_________________//
 
 
-        char strA [256];
-        char strB [256];
+        char strA [40];
+        char strB [40];
 
         /*
         Need to handle error in the input file
         Works for correct input now!
         */ 
 
-        while ( fscanf (file , "%255s -> %255[^;];", strA, strB ) == 2)
+        while ( fscanf (file , "%39s -> %39[^;];", strA, strB ) == 2)
         {
 
 
