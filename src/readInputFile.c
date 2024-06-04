@@ -37,6 +37,7 @@ graph* readFile_createStructure ( char * input_filename ) {
         char strA [256];
         char strB [256];
 
+        
         /*
         Need to handle error in the input file
         Works for correct input now!
@@ -129,18 +130,30 @@ graph* readFile_createStructure ( char * input_filename ) {
         
             
         }
-
-        // if (strcmp (strA , "}") != 0)
-        // {
-        //     fclose (file);
-        //     recursive_graph_destroy (gr);
-        //     exit (1);
-        // }
         
+        int read = fscanf (file ,"%s", strA);
 
-    
-    fclose (file);
-    return gr;
+        if (read == -1)
+        {
+            if (strcmp (strA , "}") == 0)
+            {
+                fclose (file);
+                return gr;
+            }
+            else
+            {
+                fclose (file);
+                recursive_graph_destroy (gr);
+                exit (1); 
+            }
+        }
+        else 
+        {
+            fclose (file);
+            recursive_graph_destroy (gr);
+            exit (1);   
+        }
+
 }
 
 int is_letter(char c) {
