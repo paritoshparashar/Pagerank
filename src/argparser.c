@@ -59,8 +59,7 @@ void parse_cmd_line_parameters (int argc , char *const *argv) {
 
 
         default:
-            exit (1);
-            break; // Will land here in case of an error (some other argument, other than the *options) use exit()
+            exit (1); // Will land here in case of an error (some other argument, other than the *options) use exit()
         }
     }
 
