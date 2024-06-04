@@ -59,10 +59,11 @@ void parse_cmd_line_parameters (int argc , char *const *argv) {
 
 
         default:
-            exit (1);
             break; // Will land here in case of an error (some other argument, other than the *options) use exit()
         }
     }
+
+    // What happen if many tags are present along with h and filename??
 
 
      // If -h is present, the filename won't be, so don't do anything and return

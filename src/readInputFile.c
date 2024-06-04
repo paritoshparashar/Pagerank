@@ -1,6 +1,15 @@
 #include "standard_headers.h"
 
-graph* readFile_createStructure ( char * input_filename ) {    
+graph* readFile_createStructure ( char * input_filename ) {
+
+
+    //Error handling: if -h is absent and filename is also absent
+
+    if (input_filename == NULL /*|| input_filename[0] == '\0'*/ )  // Check 2nd or condition later
+    {
+        return NULL;
+    }
+    
 
     FILE* file = fopen (input_filename , "r");
         
@@ -8,7 +17,7 @@ graph* readFile_createStructure ( char * input_filename ) {
         if (file == NULL)
         {
             fclose (file);
-            exit (1);
+            return NULL ;
         }
 
         char graph_name[40];
@@ -16,7 +25,7 @@ graph* readFile_createStructure ( char * input_filename ) {
         if (fscanf (file , "digraph %39s {" , graph_name) != 1)
         {
             fclose (file);
-            exit (1);                               // Error: reading the file
+            return NULL;                                 // Error: reading the file
         }
 
         graph *gr = createGraph (graph_name);
@@ -35,12 +44,6 @@ graph* readFile_createStructure ( char * input_filename ) {
 
         while ( fscanf (file , "%39s -> %39[^;];", strA, strB ) == 2)
         {
-
-
-            if (!is_valid_identifier(strA) || !is_valid_identifier(strB)) {
-                break;
-            }
-
             /*
             Check if any node with strA/B name exists, 
             if it doesn't, create node && add node, 
@@ -120,33 +123,8 @@ graph* readFile_createStructure ( char * input_filename ) {
         
             
         }
-        if (strcmp (strA , "}") != 0)
-        {
-            fclose (file);
-            recursive_graph_destroy (gr);
-            exit (1);
-        }
-        
 
-    fclose (file);
+    
 
     return gr;
 }
-
-
-int is_letter(char c) {
-    return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z');
-}
-
-int is_digit(char c) {
-    return c >= '0' && c <= '9';
-}
-
-int is_valid_identifier(const char *id) {
-    if (!is_letter(id[0])) return 0; // The first character must be a letter
-    for (int i = 1; id[i] != '\0'; i++) {
-        if (!is_letter(id[i]) && !is_digit(id[i])) return 0; // All characters must be alphanumeric
-    }
-    return 1;
-}
-
