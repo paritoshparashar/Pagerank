@@ -17,10 +17,10 @@
   void print_graph_statistics (){
 
         //Error handling: if -h is absent and filename is also absent
-        if (optional_filename == NULL || optional_filename[0] == '\0') // Is this a redundant check? i am checking this in main too
-        {
-            return;
-        }
+        // if (optional_filename == NULL || optional_filename[0] == '\0') // Is this a redundant check? i am checking this in main too
+        // {
+        //     return;
+        // }
         
         
         // Create a graph from a filename string and print name
