@@ -28,8 +28,7 @@
 
         if (gr == NULL)
         {
-            //exit(1);
-            return;
+            exit(1);
         }
         
         printf ("%s:\n" ,  gr->name );

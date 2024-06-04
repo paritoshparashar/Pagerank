@@ -5,10 +5,10 @@ graph* readFile_createStructure ( char * input_filename ) {
 
     //Error handling: if -h is absent and filename is also absent
 
-    if (input_filename == NULL /*|| input_filename[0] == '\0'*/ )  // Check 2nd or condition later
-    {
-        return NULL;
-    }
+    // if (input_filename == NULL /*|| input_filename[0] == '\0'*/ )  // Check 2nd or condition later
+    // {
+    //     return NULL;
+    // }  Redundant
     
 
     FILE* file = fopen (input_filename , "r");
@@ -123,6 +123,14 @@ graph* readFile_createStructure ( char * input_filename ) {
         
             
         }
+
+        if (strcmp (strA , "}") != 0)
+        {
+            fclose (file);
+            recursive_graph_destroy (gr);
+            exit (1);
+        }
+        
 
     
 
