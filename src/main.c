@@ -29,6 +29,16 @@ int main(int argc, char *const *argv) {
   }
   
 
+  // Wrong values of flag arguments
+  if (r_flag == 1 || m_flag == 1)
+  {
+    if (m_val < 0 || r_val < 0 || p_val < 1 || p_val > 100)
+    {
+      exit (1);
+    }
+
+  }
+  
   if (s_flag == 1)
   {
     print_graph_statistics();
@@ -44,7 +54,13 @@ int main(int argc, char *const *argv) {
     print_markovChains_pagerank ();
   }
   
-  
+
+  // Error: No argument given
+  if (s_flag != 1 && r_flag != 1 && m_flag != 1 && h_flag != 1)
+  {
+    exit (1);
+  }
+
 
   
 return 0;

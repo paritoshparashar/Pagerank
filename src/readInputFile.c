@@ -44,6 +44,12 @@ graph* readFile_createStructure ( char * input_filename ) {
 
         while ( fscanf (file , "%255s -> %255[^;];", strA, strB ) == 2)
         {
+
+            if (!is_valid_identifier(strA) || !is_valid_identifier(strB)) 
+            { 
+                exit (1);
+            }
+
             /*
             Check if any node with strA/B name exists, 
             if it doesn't, create node && add node, 
@@ -135,4 +141,20 @@ graph* readFile_createStructure ( char * input_filename ) {
     
     fclose (file);
     return gr;
+}
+
+int is_letter(char c) {
+    return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z');
+}
+
+int is_digit(char c) {
+    return c >= '0' && c <= '9';
+}
+
+int is_valid_identifier(const char *id) {
+    if (!is_letter(id[0])) return 0; // The first character must be a letter
+    for (int i = 1; id[i] != '\0'; i++) {
+        if (!is_letter(id[i]) && !is_digit(id[i])) return 0; // All characters must be alphanumeric
+    }
+    return 1;
 }

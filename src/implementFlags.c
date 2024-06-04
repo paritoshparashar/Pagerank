@@ -164,8 +164,7 @@ graph* safelycreateGraph () {
 
         if (gr == NULL)
         {
-            //exit(1);
-            return NULL;
+            exit (1);
         }
 
         if (gr->node_count == 0)
