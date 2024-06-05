@@ -11,10 +11,10 @@
     char* optional_filename = NULL;
 
     int r_flag = 0;
-    int r_val = 0;
+    int r_val = 1;
 
     int m_flag = 0;
-    int m_val = 0;
+    int m_val = 1;
 
     int p_flag = 0;
     int p_val = 10;

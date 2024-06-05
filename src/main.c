@@ -28,17 +28,6 @@ int main(int argc, char *const *argv) {
     exit (1);
   }
   
-
-  // Wrong values of flag arguments
-  if (r_flag == 1 || m_flag == 1)
-  {
-    if (m_val < 0 || r_val < 0 || p_val < 1 || p_val > 100)
-    {
-      exit (1);
-    }
-
-  }
-  
   if (s_flag == 1)
   {
     print_graph_statistics();
@@ -46,11 +35,21 @@ int main(int argc, char *const *argv) {
 
   if (r_flag == 1)
   {
+    if (r_val < 1 || p_val < 1)
+    {
+      exit (1);
+    }
+    
     print_randomSurfer_pagerank ();
   }
   
   if (m_flag == 1)
   {
+    if (m_val < 1 || p_val < 1)
+    {
+      exit (1);
+    }
+
     print_markovChains_pagerank ();
   }
   
