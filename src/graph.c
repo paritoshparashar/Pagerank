@@ -75,7 +75,7 @@ graph_node * createNode ( char * name) {
     // Set the default values of a node
 
                                                                 // MALLOC *******
-    newNode->name = (char*)malloc (256* sizeof (char));
+    newNode->name = (char*)malloc (257* sizeof (char));
     strcpy (newNode->name , name);
 
     newNode->outEdge = NULL;
@@ -175,7 +175,7 @@ graph* createGraph ( char * name ) {
     // Set the default values of a node
 
                                                                 // MALLOC *******
-    gr->name = (char*)malloc (256* sizeof (char));
+    gr->name = (char*)malloc (257* sizeof (char));
     strcpy (gr->name , name);
 
     gr->node = NULL;
