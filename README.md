@@ -37,9 +37,30 @@ The pagerank program can be executed with various command line options:
    ./pagerank [OPTIONS]... [FILENAME]
    ```
 
-Options
+### Options
 *   -h   : Print a brief overview of the available command line parameters.
 *   -r N : Simulate N steps of the random surfer and output the result.
 *   -m N : Simulate N steps of the Markov chain and output the result.
 *   -s   : Compute and print the statistics of the graph.
 *   -p P : Set the probability parameter p for the random surfer model (default is 10%).
+
+
+### Examples
+To run a simulation using the random surfer model for 100 steps:
+```bash
+./pagerank -r 100 graph.dot
+```
+To run a simulation using the markov chains model with probability(=15):
+```bash
+./pagerank -m -p 15 prog2graph.dot
+```
+To display all the different parameter options
+```bash
+./ pagerank -h
+```
+
+## Features
+
++ Random Surfer Simulation: Approximates the PageRank by simulating a user's navigation through the network.
++ Markov Chain Computation: Provides a more accurate PageRank calculation using matrix multiplication.
++ Graph Statistics: Computes and prints statistics about the input graph.
