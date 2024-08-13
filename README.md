@@ -1,5 +1,28 @@
-# Pagerank
+# Page Rank Project
+
+This project is an implementation of a PageRank algorithm using C, designed to analyze directed graphs and compute the PageRank of its vertices. This project is part of the Saarland University Programming 2 course for the Summer Term 2024.
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [Contributing](#contributing)
+- [License](#license)
 
 ## Overview
-In this project, you will implement a C program that can analyze directed graphs and compute the page rank of its vertices. The directed graphs that we are interested in can be considered as consisting of websites and the hyperlinks connecting two websites.
-Section 2 introduces the random surfer model as well as the Markov chain model which will both be used to determine the page rank. The functionalities your program needs to implement is documented in section 3. Section 4 indicates which implemented functionalities will score what amount of points. The appendix gives more technical information, a theory background on graphs, and examples on how to manually work with Markov chains. Furthermore, it answers several frequently asked questions.
+
+The goal of this project is to compute the PageRank of vertices in a directed graph, which can be considered as websites connected by hyperlinks. The implementation uses two methods to calculate the PageRank:
+
+1. **Random Surfer Model:** Simulates the behavior of a random surfer navigating through the network of websites to approximate PageRank.
+2. **Markov Chain Model:** Uses mathematical foundations to compute PageRank with higher precision.
+
+## Installation
+
+To compile and run the program, ensure you have a C compiler installed (e.g., `gcc`). Follow the steps below:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/pagerank.git
+   cd pagerank
