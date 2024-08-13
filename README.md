@@ -26,3 +26,8 @@ To compile and run the program, ensure you have a C compiler installed (e.g., `g
    ```bash
    git clone https://github.com/yourusername/pagerank.git
    cd pagerank
+2. Compile the project using `make`
+   ```bash
+   make
+
+## Usage
