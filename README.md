@@ -29,5 +29,17 @@ To compile and run the program, ensure you have a C compiler installed (e.g., `g
 2. Compile the project using `make`
    ```bash
    make
-
+   
 ## Usage
+
+The pagerank program can be executed with various command line options:
+   ```bash
+   ./pagerank [OPTIONS]... [FILENAME]
+   ```
+
+Options
+*   -h   : Print a brief overview of the available command line parameters.
+*   -r N : Simulate N steps of the random surfer and output the result.
+*   -m N : Simulate N steps of the Markov chain and output the result.
+*   -s   : Compute and print the statistics of the graph.
+*   -p P : Set the probability parameter p for the random surfer model (default is 10%).
