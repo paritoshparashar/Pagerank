@@ -64,3 +64,21 @@ To display all the different parameter options
 + Random Surfer Simulation: Approximates the PageRank by simulating a user's navigation through the network.
 + Markov Chain Computation: Provides a more accurate PageRank calculation using matrix multiplication.
 + Graph Statistics: Computes and prints statistics about the input graph.
+
+## Contributing
+Contributions are welcome! Please follow these steps:
+
++ Fork the repository.
++ Create a new branch
+  ```bash
+   git checkout -b feature/your-feature
+   ```
++ Commit your changes
+  ```bash
+   git commit -m 'Add your feature'
+   ```
++ Push to the branch
+  ```bash
+   git push origin feature/your-feature
+   ```
++ Open a pull request.
