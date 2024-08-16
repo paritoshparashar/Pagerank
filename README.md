@@ -9,7 +9,6 @@ This project is an implementation of a PageRank algorithm using C, designed to a
 - [Usage](#usage)
 - [Features](#features)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Overview
 
